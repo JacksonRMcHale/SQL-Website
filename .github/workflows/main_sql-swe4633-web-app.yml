@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: php-app
-          path: ./src/
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -57,4 +57,4 @@ jobs:
           app-name: 'SQL-SWE4633-Web-App'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CC60B053654F4D3BAA6DD38E1CD4D997 }}
-          package: ./src/
+          package: .
