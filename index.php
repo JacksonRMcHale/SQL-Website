@@ -11,9 +11,7 @@
         <p> 
             Here's some data from the sql database:
             <?php
-                echo "3";
-                echo "\SELECT * FROM grades;";
-                echo "4";
+                echo sqlsrv_query($conn, "SELECT * FROM grades;");
             ?>
         </p>
     </body>
