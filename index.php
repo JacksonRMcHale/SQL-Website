@@ -20,23 +20,19 @@
                 echo sqlsrv_query($conn, "SELECT * FROM grades;");
             */
     
-    $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
-    $connectionOptions = array(
-        "Database" => "grades",
-        "Uid" => "jmchale",
-        "PWD" => "3Ju9w43jxmPxjaV"
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT * FROM grades;";
-    $getResults= sqlsrv_query($conn, $tsql);
-    echo ("Reading data from table" . PHP_EOL);
-    if ($getResults == FALSE)
-        echo (sqlsrv_errors());
-    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row . PHP_EOL);
-    }
-    sqlsrv_free_stmt($getResults);
+            $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
+            $userName = 'jmchale@jmchale-swe4633-sql';
+            $userPassword = '3Ju9w43jxmPxjaV';
+            $dbName = "grades";
+         
+            $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
+         
+            sqlsrv_configure('WarningsReturnAsErrors', 0);
+            $conn = sqlsrv_connect( $serverName, $connectionInfo);
+            if($conn === false)
+            {
+              FatalError("Failed to connect...");
+            }
 
 
 
