@@ -16,7 +16,7 @@
                 $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
                 echo "\n1\n";
                 $conn = sqlsrv_connect($serverName, $connectionInfo);
-                echo "2\n"
+                echo "2\n";
                 sqlsrv_query($conn, "SELECT * FROM grades;");
                 echo "3\n";
 
