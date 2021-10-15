@@ -20,7 +20,7 @@
                 echo sqlsrv_query($conn, "SELECT * FROM grades;");
             */
     
-    $serverName = "jmchale-swe4633-sql.database.windows.net";
+    $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
     $connectionOptions = array(
         "Database" => "grades",
         "Uid" => "jmchale",
