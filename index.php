@@ -11,31 +11,14 @@
         <p> 
             Here's some data from the sql database:
             <?php
-            /*
                 // SQL Server Extension Sample Code:
                 $connectionInfo = array("UID" => "jmchale", "pwd" => "3Ju9w43jxmPxjaV", "Database" => "grades", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
                 $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
+                echo "\n1\n";
                 $conn = sqlsrv_connect($serverName, $connectionInfo);
-
-                echo sqlsrv_query($conn, "SELECT * FROM grades;");
-            */
-    
-            $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
-            $userName = 'jmchale@jmchale-swe4633-sql';
-            $userPassword = '3Ju9w43jxmPxjaV';
-            $dbName = "grades";
-            echo "1";
-            $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
-            echo "2";
-            //sqlsrv_configure('WarningsReturnAsErrors', 0);
-            echo "3";
-            $conn = sqlsrv_connect( $serverName, $connectionInfo);
-            echo "4";
-            if($conn === false)
-            {
-              FatalError("Failed to connect...");
-              echo "ERROR";
-            }
+                echo "2\n"
+                sqlsrv_query($conn, "SELECT * FROM grades;");
+                echo "3\n";
 
 
 
