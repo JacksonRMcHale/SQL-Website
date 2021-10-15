@@ -17,7 +17,7 @@
                 $conn = sqlsrv_connect($serverName, $connectionInfo);
             ?>
             <?php
-                echo "SELECT * FROM grades;";
+                echo "\SELECT * FROM grades;";
             ?>
         </p>
     </body>
