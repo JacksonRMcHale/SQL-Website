@@ -27,7 +27,7 @@
             echo "1";
             $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
             echo "2";
-            sqlsrv_configure('WarningsReturnAsErrors', 0);
+            //sqlsrv_configure('WarningsReturnAsErrors', 0);
             echo "3";
             $conn = sqlsrv_connect( $serverName, $connectionInfo);
             echo "4";
