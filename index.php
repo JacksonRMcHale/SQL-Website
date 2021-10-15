@@ -11,7 +11,12 @@
         <p> 
             Here's some data from the sql database:
             <?php
-                echo sqlsrv_query("SELECT * FROM grades;");
+                // SQL Server Extension Sample Code:
+                $connectionInfo = array("UID" => "jmchale", "pwd" => "3Ju9w43jxmPxjaV", "Database" => "grades", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+                $serverName = "tcp:jmchale-swe4633-sql.database.windows.net,1433";
+                $conn = sqlsrv_connect($serverName, $connectionInfo);
+
+                echo sqlsrv_query($conn, "SELECT * FROM grades;");
             ?>
         </p>
     </body>
