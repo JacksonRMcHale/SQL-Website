@@ -24,10 +24,11 @@
             $userName = 'jmchale@jmchale-swe4633-sql';
             $userPassword = '3Ju9w43jxmPxjaV';
             $dbName = "grades";
-         
+            echo "1";
             $connectionInfo = array("Database"=>$dbName, "UID"=>$userName, "PWD"=>$userPassword, "MultipleActiveResultSets"=>true);
-         
+            echo "2";
             sqlsrv_configure('WarningsReturnAsErrors', 0);
+            
             $conn = sqlsrv_connect( $serverName, $connectionInfo);
             if($conn === false)
             {
